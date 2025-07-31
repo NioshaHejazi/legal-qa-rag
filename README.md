@@ -1,87 +1,74 @@
 # Legal Q&A Assistant with RAG (Retrieval-Augmented Generation)
 
-This project implements a simple yet powerful **LLM-based legal question-answering assistant** using **retrieval-augmented generation (RAG)**. The system answers user questions using real-world legal documents (e.g., traffic accident FAQs, personal injury guidance) retrieved from a local vector store.
+This is a work-in-progress implementation of a **legal-domain question-answering system** using **retrieval-augmented generation (RAG)**. The goal is to build a prototype that answers user questions using legal FAQs retrieved from a local vector store and enhanced with LLM-based responses.
 
 ---
 
-## 🔍 Objectives
+## 🔍 Project Goal
 
-This project was designed to:
-- Demonstrate **RAG workflows** using vector search + LLM generation
-- Work with **semi-structured legal documents**
-- Showcase **prompt engineering** and **LLM integration**
-- Prepare a **resume-ready, real-world AI use case** aligned with industry job roles (e.g., EvenUp)
+This project aims to:
 
----
-
-## 🧩 Key Features
-
-- ✅ Retrieval-augmented generation using **FAISS** + **LLM**
-- ✅ Data ingestion pipeline for **scraped legal FAQs**
-- ✅ Prompt templating for user questions
-- ✅ Inference pipeline that returns generated answer + source context
-- ✅ Ready to extend with FastAPI or LangChain
+- Explore **RAG-style workflows** combining vector retrieval + LLM generation
+- Work with **semi-structured legal text**, such as traffic accident FAQs
+- Practice **prompt engineering** and **context-aware inference**
+- Serve as a portfolio project aligned with real-world NLP/ML engineering roles
 
 ---
 
-## 🏗 Tech Stack
+## 🧩 Planned Features
 
-- Python 3.10+
-- `sentence-transformers` for embedding (e.g., `all-MiniLM-L6-v2`)
-- `faiss-cpu` for similarity search
-- OpenAI API or Hugging Face Transformers (`GPT2`, `T5`, `LLama2`, etc.)
-- Jupyter notebook + optionally FastAPI
+- Document ingestion and preprocessing for legal FAQ content  
+- Sentence embedding and similarity search using **FAISS**  
+- Prompt formatting and question-handling logic  
+- LLM generation based on retrieved context  
+- Optional: FastAPI-based backend or notebook interface
 
 ---
 
-## 📁 Folder Structure
+## 🏗 Tech Stack (Planned)
+
+- Python 3.10+  
+- `sentence-transformers` for embeddings  
+- `faiss-cpu` for vector indexing  
+- `transformers` from Hugging Face  
+- OpenAI API (optional), or local LLM (T5, GPT2)  
+- Jupyter Notebook or FastAPI interface
+
+---
+
+## 📄 Example Use Case
+
+> “What should I do immediately after a car accident in Ontario?”
+
+The system will retrieve matching answers from a small scraped set of traffic accident FAQs and generate a natural language answer using an LLM.
+
+---
+
+## 📁 Project Structure (planned)
 
 ```
 legal-qa-rag/
-│
-├── data/               # Raw and processed legal FAQs
-├── rag_pipeline/       # Core code: ingest, embed, retrieve, generate
-│   ├── embed.py
-│   ├── retrieve.py
-│   ├── generate.py
-│   └── prompt_template.py
-├── app.py              # Optional FastAPI server (in progress)
-├── example_queries.ipynb
+├── data/                  # Raw and cleaned FAQs
+├── rag_pipeline/          # Code modules for embedding, search, and generation
+├── example_queries.ipynb  # Notebook interface
 └── README.md
 ```
 
 ---
 
-## ⚙️ Example Usage
+## 📌 Current Status
 
-```python
-from rag_pipeline import retrieve, generate
+🔧 Currently building:  
+- Data ingestion and embedding pipeline  
+- Retrieval + generation logic
 
-question = "What should I do right after a car accident in Ontario?"
-context_docs = retrieve(question)
-answer = generate(question, context_docs)
-print(answer)
-```
-
----
-
-## 📄 Example Sources
-
-- [Ontario.ca Legal Aid and Traffic Collision Advice](https://www.ontario.ca/page/legal-aid)
-- [Paralegal or Personal Injury Law Firm FAQs] (scraped, anonymized)
-
----
-
-## 🧪 Future Additions
-
-- A/B testing against other LLMs (e.g., T5 vs GPT2)
-- FastAPI deployment
-- LangChain-based document loading + retrieval
-- RAG with ChromaDB or Pinecone
+Coming next:  
+- Notebook interface  
+- Evaluation examples and FastAPI wrapper
 
 ---
 
 ## 🤝 Credits
 
 Created by [Niosha Hejazi](https://www.linkedin.com/in/nioshahejazi)  
-Built as a portfolio project to demonstrate applied LLM development in the legal domain.
+This project is part of my portfolio to demonstrate applied LLM development and RAG workflows for real-world use cases.
