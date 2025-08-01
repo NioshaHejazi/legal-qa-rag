@@ -2,7 +2,7 @@
 
 This project is a working prototype of a **legal-domain question-answering system** using **retrieval-augmented generation (RAG)**. It combines vector-based document retrieval (FAISS) with **OpenAI GPT-4** to generate accurate, grounded answers to legal questions based on real public FAQs.
 
----
+
 
 ## 🔍 Project Purpose
 
@@ -11,7 +11,7 @@ This project is a working prototype of a **legal-domain question-answering syste
 - Showcase NLP techniques like vector search, prompt engineering, and GPT-4 generation
 - Provide a reproducible, portfolio-grade legal tech pipeline
 
----
+
 
 ## 🛠 Technologies Used
 
@@ -21,7 +21,7 @@ This project is a working prototype of a **legal-domain question-answering syste
 - **OpenAI GPT-4 API** – for answer generation
 -  Streamlit for deployment/demo
 
----
+
 
 ## 🚀 How to Use
 
@@ -31,7 +31,6 @@ The project includes an interactive interface (`app.py`) where users can:
 - Enter a natural language question
 - Receive a GPT-4 generated answer grounded in retrieved legal content
 
----
 
 ### 🔧 Backend Pipeline
 
@@ -45,7 +44,6 @@ The full RAG workflow is automatically triggered through the interface or can be
 
 All components are modular and can be reused or extended independently. The UI (`app.py`) ties everything into a seamless legal Q&A experience.
 
----
 ## 🤝 Credits
 
 Created by [Niosha Hejazi](https://www.linkedin.com/in/nioshahejazi)  
