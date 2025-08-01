@@ -1,7 +1,6 @@
 # Legal Q&A Assistant using Retrieval-Augmented Generation (RAG)
 
-This project is a working prototype of a **legal-domain question-answering system** using **retrieval-augmented generation (RAG)**. It combines vector-based document retrieval (FAISS) with **OpenAI GPT-4** to generate accurate, grounded answers to legal questions based on real public FAQs.
-
+This project is a fully functional prototype of a legal-domain question-answering system built using retrieval-augmented generation (RAG) and large language models (LLMs). It combines dense vector retrieval using FAISS with context-aware answer generation via OpenAI's GPT-4, allowing the system to produce accurate and grounded responses to legal questions. All responses are based on public legal FAQs, making the assistant reliable, transparent, and aligned with real-world legal information.
 
 
 ## 🔍 Project Purpose
