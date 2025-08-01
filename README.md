@@ -1,74 +1,52 @@
-# Legal Q&A Assistant with RAG (Retrieval-Augmented Generation)
+# Legal Q&A Assistant using Retrieval-Augmented Generation (RAG)
 
-This is a work-in-progress implementation of a **legal-domain question-answering system** using **retrieval-augmented generation (RAG)**. The goal is to build a prototype that answers user questions using legal FAQs retrieved from a local vector store and enhanced with LLM-based responses.
-
----
-
-## 🔍 Project Goal
-
-This project aims to:
-
-- Explore **RAG-style workflows** combining vector retrieval + LLM generation
-- Work with **semi-structured legal text**, such as traffic accident FAQs
-- Practice **prompt engineering** and **context-aware inference**
-- Serve as a portfolio project aligned with real-world NLP/ML engineering roles
+This project is a working prototype of a **legal-domain question-answering system** using **retrieval-augmented generation (RAG)**. It combines vector-based document retrieval (FAISS) with **OpenAI GPT-4** to generate accurate, grounded answers to legal questions based on real public FAQs.
 
 ---
 
-## 🧩 Planned Features
+## 🔍 Project Purpose
 
-- Document ingestion and preprocessing for legal FAQ content  
-- Sentence embedding and similarity search using **FAISS**  
-- Prompt formatting and question-handling logic  
-- LLM generation based on retrieved context  
-- Optional: FastAPI-based backend or notebook interface
-
----
-
-## 🏗 Tech Stack (Planned)
-
-- Python 3.10+  
-- `sentence-transformers` for embeddings  
-- `faiss-cpu` for vector indexing  
-- `transformers` from Hugging Face  
-- OpenAI API (optional), or local LLM (T5, GPT2)  
-- Jupyter Notebook or FastAPI interface
+- Answer user legal questions using real legal resources (e.g., CLEO, StepsToJustice)
+- Demonstrate a practical RAG workflow applied to semi-structured legal text
+- Showcase NLP techniques like vector search, prompt engineering, and GPT-4 generation
+- Provide a reproducible, portfolio-grade legal tech pipeline
 
 ---
 
-## 📄 Example Use Case
+## 🛠 Technologies Used
 
-> “What should I do immediately after a car accident in Ontario?”
-
-The system will retrieve matching answers from a small scraped set of traffic accident FAQs and generate a natural language answer using an LLM.
-
----
-
-## 📁 Project Structure (planned)
-
-```
-legal-qa-rag/
-├── data/                  # Raw and cleaned FAQs
-├── rag_pipeline/          # Code modules for embedding, search, and generation
-├── example_queries.ipynb  # Notebook interface
-└── README.md
-```
+- **Python 3.10+**
+- **FAISS** – Fast Approximate Nearest Neighbor Search
+- **SentenceTransformers** – (e.g., `all-MiniLM-L6-v2`) for dense embeddings
+- **OpenAI GPT-4 API** – for answer generation
+-  Streamlit for deployment/demo
 
 ---
 
-## 📌 Current Status
+## 🚀 How to Use
 
-🔧 Currently building:  
-- Data ingestion and embedding pipeline  
-- Retrieval + generation logic
+The project includes an interactive interface (`app.py`) where users can:
 
-Coming next:  
-- Notebook interface  
-- Evaluation examples and FastAPI wrapper
+- Select a legal topic from a dropdown menu (e.g., housing law, language rights)
+- Enter a natural language question
+- Receive a GPT-4 generated answer grounded in retrieved legal content
 
 ---
 
+### 🔧 Backend Pipeline
+
+The full RAG workflow is automatically triggered through the interface or can be run step-by-step using scripts:
+
+1. Run `scrape_and_process.py` to fetch, clean, and chunk public legal FAQs  
+2. Use `embed_chunks.py` to generate vector embeddings  
+3. Build a FAISS index using `build_faiss_index.py`  
+4. Query the index using `query_faiss.py`  
+5. Generate GPT-4 responses using `generate_answer.py`
+
+All components are modular and can be reused or extended independently. The UI (`app.py`) ties everything into a seamless legal Q&A experience.
+
+---
 ## 🤝 Credits
 
 Created by [Niosha Hejazi](https://www.linkedin.com/in/nioshahejazi)  
-This project is part of my portfolio to demonstrate applied LLM development and RAG workflows for real-world use cases.
+This project demonstrates applied NLP, LLMs, and vector search for real-world legal question answering.
